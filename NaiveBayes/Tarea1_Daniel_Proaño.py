@@ -37,12 +37,12 @@ y = labelencoder_y.fit_transform(y)
 
 #Separar los conjuntos de datos en grupo de entrenamiento y de prueba
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
 
 
 # Ajustar el clasificador con los datos de entrenamiento
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
+from sklearn.naive_bayes import MultinomialNB
+classifier = MultinomialNB()
 classifier.fit(X_train, y_train)
 
 # Predecir los resultados en base a los datos de prueba
